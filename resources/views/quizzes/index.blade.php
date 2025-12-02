@@ -10,11 +10,11 @@
                 </p>
             </div>
             <a
-                href="#"
-                class="inline-flex items-center gap-2 text-sm font-medium text-zinc-400"
-                title="Panel administracyjny wkrótce"
+                href="{{ route('admin.dashboard') }}"
+                class="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-800"
+                title="Przejdź do panelu administracyjnego"
             >
-                Panel admina (wkrótce)
+                Panel admina
             </a>
         </div>
     </section>

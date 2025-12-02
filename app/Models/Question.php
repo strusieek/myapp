@@ -16,7 +16,10 @@ class Question extends Model
         'quiz_id',
         'question_text',
         'question_type',
+        'allow_multiple_answers',
         'points',
+        'explanation',
+        'time_limit',
         'display_order',
     ];
 
@@ -24,6 +27,8 @@ class Question extends Model
         'points' => 'integer',
         'display_order' => 'integer',
         'question_type' => QuestionType::class,
+        'allow_multiple_answers' => 'boolean',
+        'time_limit' => 'integer',
     ];
 
     public function quiz(): BelongsTo
@@ -43,7 +48,7 @@ class Question extends Model
 
     public function isSelectable(): bool
     {
-        return in_array($this->question_type, [QuestionType::MULTIPLE_CHOICE, QuestionType::TRUE_FALSE], true);
+        return in_array($this->question_type, [QuestionType::MULTIPLE_CHOICE, QuestionType::MULTI_SELECT, QuestionType::TRUE_FALSE], true);
     }
 
     public function isShortAnswer(): bool

@@ -12,12 +12,23 @@ class Quiz extends Model
 
     protected $fillable = [
         'title',
+        'category',
         'description',
         'time_limit',
+        'is_active',
+        'pass_threshold',
+        'randomize_questions',
+        'randomize_answers',
+        'max_attempts',
     ];
 
     protected $casts = [
         'time_limit' => 'integer',
+        'is_active' => 'boolean',
+        'pass_threshold' => 'integer',
+        'randomize_questions' => 'boolean',
+        'randomize_answers' => 'boolean',
+        'max_attempts' => 'integer',
     ];
 
     public function questions(): HasMany

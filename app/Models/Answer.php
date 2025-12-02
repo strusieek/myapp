@@ -14,6 +14,7 @@ class Answer extends Model
         'question_id',
         'answer_text',
         'is_correct',
+        'explanation',
     ];
 
     protected $casts = [

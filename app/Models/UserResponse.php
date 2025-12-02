@@ -19,11 +19,17 @@ class UserResponse extends Model
         'text_response',
         'is_correct',
         'points_earned',
+        'manually_graded',
+        'feedback',
+        'reviewed_at',
+        'reviewed_by',
     ];
 
     protected $casts = [
         'is_correct' => 'boolean',
         'points_earned' => 'integer',
+        'manually_graded' => 'boolean',
+        'reviewed_at' => 'datetime',
     ];
 
     public function attempt(): BelongsTo
@@ -44,6 +50,11 @@ class UserResponse extends Model
     public function selectedAnswer(): BelongsTo
     {
         return $this->belongsTo(Answer::class, 'selected_answer_id');
+    }
+
+    public function reviewer(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'reviewed_by');
     }
 }
 
