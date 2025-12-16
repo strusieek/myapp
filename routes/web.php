@@ -14,7 +14,7 @@ Route::post('/quizzes/{quiz}', [QuizController::class, 'submit'])->name('quizzes
 Route::get('/quizzes/{quiz}/results/{attempt}', [QuizController::class, 'result'])->name('quizzes.results');
 
 Route::prefix('admin')->as('admin.')->group(function () {
-    // Prosty panel admina bez autoryzacji – w przyszłości można dodać middleware 'auth' i 'can:admin'.
+    //panel admina bez autoryzacji - w przyszłości można dodać middleware auth i can:admin.
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('quizzes', AdminQuizController::class)->except(['show']);

@@ -11,39 +11,10 @@
             <a href="{{ route('admin.quizzes.index') }}" class="rounded-xl border border-zinc-200 px-3 py-1 text-zinc-600 hover:border-zinc-300">
                 Zarządzaj quizami
             </a>
-            <a href="{{ route('admin.grading.index') }}" class="rounded-xl border border-zinc-200 px-3 py-1 text-zinc-600 hover:border-zinc-300">
-                Otwarta ocena
-            </a>
-        </div>
-    </section>
-
-    <section class="grid gap-4 md:grid-cols-4 mb-8">
-        <div class="rounded-2xl border border-zinc-200 bg-white/80 p-4">
-            <p class="text-xs uppercase tracking-wide text-zinc-400">Aktywne quizy</p>
-            <p class="mt-2 text-3xl font-semibold text-zinc-900">{{ $activeQuizzes }}</p>
-            <p class="text-xs text-zinc-500">z {{ $totalQuizzes }} wszystkich</p>
-        </div>
-        <div class="rounded-2xl border border-zinc-200 bg-white/80 p-4">
-            <p class="text-xs uppercase tracking-wide text-zinc-400">Użytkownicy</p>
-            <p class="mt-2 text-3xl font-semibold text-zinc-900">{{ $userCount }}</p>
-        </div>
-        <div class="rounded-2xl border border-zinc-200 bg-white/80 p-4">
-            <p class="text-xs uppercase tracking-wide text-zinc-400">Odpowiedzi otwarte</p>
-            <p class="mt-2 text-3xl font-semibold text-zinc-900">{{ $pendingOpenResponses }}</p>
-            <p class="text-xs text-zinc-500">oczekuje na sprawdzenie</p>
-        </div>
-        <div class="rounded-2xl border border-zinc-200 bg-white/80 p-4">
-            <p class="text-xs uppercase tracking-wide text-zinc-400">Szybki dostęp</p>
-            <p class="mt-2 text-sm text-zinc-600">
-                Użyj tego panelu, aby rozwinąć raporty i kolejne widgety w przyszłości.
-            </p>
         </div>
     </section>
 
     <section class="space-y-3">
-        <div class="flex items-center justify-between">
-            <h2 class="text-sm font-medium text-zinc-800">Najpopularniejsze quizy</h2>
-        </div>
         <div class="overflow-hidden rounded-2xl border border-zinc-200 bg-white/80">
             <table class="min-w-full divide-y divide-zinc-200 text-sm">
                 <thead class="bg-zinc-50">

@@ -69,21 +69,16 @@
         </header>
 
         <main class="flex-1">
-            <div class="mx-auto w-full max-w-6xl px-6 py-10">
-                @if(session('status'))
-                    <div class="mb-6 rounded-lg border {{ config('quiz.palette.borderSoft', 'border-indigo-200') }} {{ config('quiz.palette.subtleBg', 'bg-indigo-50') }} px-4 py-3 text-sm {{ config('quiz.palette.textStrong', 'text-indigo-900') }}">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                {{ $slot }}
+    <div class="mx-auto w-full max-w-6xl px-6 py-10">
+        @if(session('status'))
+            <div class="mb-6 rounded-lg border {{ config('quiz.palette.borderSoft', 'border-indigo-200') }} {{ config('quiz.palette.subtleBg', 'bg-indigo-50') }} px-4 py-3 text-sm {{ config('quiz.palette.textStrong', 'text-indigo-900') }}">
+                {{ session('status') }}
             </div>
-        </main>
+        @endif
 
-        <footer class="border-t border-zinc-200 bg-white text-center text-xs text-zinc-500">
-            <div class="mx-auto w-full max-w-6xl px-6 py-4">
-                &copy; {{ now()->format('Y') }} Quiz Mastery. Przestrzeń dla przyszłego panelu administracyjnego.
-            </div>
-        </footer>
+        {{ $slot }}
+    </div>
+</main>
     </div>
 </body>
 
